@@ -3,8 +3,8 @@
     "short_name": "Galerie",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#F4F4F4",
-    "theme_color": "#F4F4F4", 
+    "background_color": "#364147",
+    "theme_color": "#58a0c7", 
     "orientation": "portrait-primary",
     "icons": [
       {
@@ -28,19 +28,9 @@
         "sizes": "144x144"
       },
       {
-        "src": "/assets/images/logo-152x152.png",
-        "type": "image/png",
-        "sizes": "152x152"
-      },
-      {
         "src": "/assets/images/logo-192x192.png",
         "type": "image/png",
         "sizes": "192x192"
-      },
-      {
-        "src": "/assets/images/logo-384x384.png",
-        "type": "image/png",
-        "sizes": "384x384"
       }, 
       {
         "src": "/assets/images/logo-512x512.png",

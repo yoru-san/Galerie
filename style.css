@@ -1,3 +1,13 @@
-button {
-    color: crimson;
+body {
+  background-color: #364147;
+}
+
+h1 {
+  color: #58a0c7;
+}
+
+a {
+  font-size: 20px;
+  color: #58a0c7;
+  cursor: pointer;
 }
