@@ -1,36 +1,36 @@
-const staticCacheName = 'site-galerie';
+const staticCacheName = "site-galerie";
 const assets = [
-  '/',
-  '/index.html',
-  '/assets/js/ui.js',
-  '/assets/css/main.css',
-  '/assets/images/background-home.jpg',
-  'https://fonts.googleapis.com/css?family=Lato:300,400,700',
+  "/",
+  "/index.html",
+  "/script.js",
+  "/style.css",
 ];
+
 // install event
-self.addEventListener('install', evt => {
+self.addEventListener("install", (evt) => {
   evt.waitUntil(
     caches.open(staticCacheName).then((cache) => {
-      console.log('caching shell assets');
+      console.log("caching shell assets");
       cache.addAll(assets);
     })
   );
 });
 // activate event
-self.addEventListener('activate', evt => {
+self.addEventListener("activate", (evt) => {
   evt.waitUntil(
-    caches.keys().then(keys => {
-      return Promise.all(keys
-        .filter(key => key !== staticCacheName)
-        .map(key => caches.delete(key))
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys
+          .filter((key) => key !== staticCacheName)
+          .map((key) => caches.delete(key))
       );
     })
   );
 });
 // fetch event
-self.addEventListener('fetch', evt => {
+self.addEventListener("fetch", (evt) => {
   evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
+    caches.match(evt.request).then((cacheRes) => {
       return cacheRes || fetch(evt.request);
     })
   );
